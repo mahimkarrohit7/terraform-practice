@@ -1,0 +1,36 @@
+- hosts: all
+  become: yes
+  remote_user: ubuntu
+  tasks:
+   - name: add docker apt-key
+     apt_key: 
+       url: https://download.docker.com/linux/ubuntu/gpg
+       state: present
+       validate_certs: false 
+
+   - name: add docker apt repository
+     apt_repository: 
+       repo: deb https://download.docker.com/linux/ubuntu focal stable
+       state: present 
+       filename: docker
+       update_cache: yes
+
+   - name: install dependency package
+     apt:
+       pkg:
+         - apt-transport-https
+         - ca-certificates
+         - curl
+         - software-properties-common
+       state: present
+       update_cache: yes
+
+   - name: install docker
+     apt: 
+       name: docker-ce
+       state: present
+       update_cache: yes
+
+   - name: Executing dockerfile on web server
+     ansible.buiktin.shell:
+             cmd: docker build -t apache2:latest /root/app/
