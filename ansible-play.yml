@@ -31,7 +31,14 @@
        state: present
        update_cache: yes
 
+   - name: copy of dockerfile
+     become: yes
+     ansible.builtin.copy: 
+       src: /root/app/*
+       dest: /root/
+       
+
    - name: Executing dockerfile on web server
      become: yes
      ansible.builtin.shell:
-             cmd: docker build -t apache2:latest /root/app/
+             cmd: docker build -t apache2:latest /root/.
