@@ -36,6 +36,9 @@
      ansible.builtin.copy: 
        src: /root/app/*
        dest: /root/
+       owner: root
+       group: root
+       mode: '0644'
        
 
    - name: Executing dockerfile on web server
