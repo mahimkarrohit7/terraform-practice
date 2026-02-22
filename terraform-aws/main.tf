@@ -1,6 +1,10 @@
 module "networking" {
-    source = "./networking"
-    project = var.project
+  source = "./networking"
+  project = var.project
+  name     = var.name
+  az_count = var.az_count
+  public_subnet_cidr = var.private_subnet_cidrs
+  private_subnet_cidr = var.private_subnet_cidrs
 }
 
 # module "ec2" {
