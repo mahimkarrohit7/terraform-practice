@@ -15,7 +15,7 @@ variable "vpc_cidr" {
 }
 
 variable "private_subnet_cidr" {
-    type = string
+    type = list(string)
     description = "AWS region"
 }
 
@@ -33,6 +33,6 @@ variable "az_count" {
 }
 
 variable "public_subnet_cidr" {
-  type    = string
+  type    = list(string)
 }
 
