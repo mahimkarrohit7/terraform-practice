@@ -9,10 +9,6 @@ variable "project" {
 variable "name" {
   type    = string
 }
-variable "aws_region" {
-  type = string
-  description = "AWS region"
-}
 variable "vpc_cidr" {
   type = string
   description = "AWS region"
