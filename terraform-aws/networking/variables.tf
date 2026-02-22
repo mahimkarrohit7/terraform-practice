@@ -8,10 +8,15 @@ variable "aws_region" {
     default = "ap-southeast-1"
 }
 
-variable "private_subnet_cidr" {
+variable "vpc_cidr" {
     type = string
     description = "AWS region"
     default = "ap-southeast-1"
+}
+
+variable "private_subnet_cidr" {
+    type = string
+    description = "AWS region"
 }
 
 # variable "bucket_name" {
@@ -21,7 +26,6 @@ variable "private_subnet_cidr" {
 
 variable "project" {
   type    = string
-  default = "personal-lab"
 }
 
 variable "az_count" {

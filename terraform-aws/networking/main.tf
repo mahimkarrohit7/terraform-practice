@@ -19,7 +19,7 @@ module "vpc" {
 }
 
 resource "aws_vpc" "project_personal_vpc" {
-    cidr_block = var.cidr_block
+    cidr_block = var.vpc_cidr
     instance_tenancy = "default"
 
     tags = {
