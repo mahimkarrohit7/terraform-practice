@@ -15,13 +15,13 @@ variable "vpc_cidr" {
 }
 variable "private_subnet_cidrs" {
   type = list(string)
-  description = "AWS region"
+  description = "AWS"
+}
+variable "public_subnet_cidrs" {
+  type = list(string)
 }
 variable "az_count" {
   type    = string
-}
-variable "public_subnet_cidrs" {
-  type    = list(string)
 }
 variable "one_nat_gateway_per_az" {
   type    = string

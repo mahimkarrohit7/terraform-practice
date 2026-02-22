@@ -2,9 +2,10 @@ module "networking" {
   source = "./networking"
   project = var.project
   name     = var.name
+  vpc_cidr = var.vpc_cidr
   az_count = var.az_count
-  public_subnet_cidr = var.private_subnet_cidrs
-  private_subnet_cidr = var.private_subnet_cidrs
+  public_subnet_cidrs = var.public_subnet_cidrs
+  private_subnet_cidrs = var.private_subnet_cidrs
 }
 
 # module "ec2" {
