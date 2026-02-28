@@ -29,3 +29,6 @@ variable "one_nat_gateway_per_az" {
 variable "enable_nat_gateway" {
   type    = string
 }
+variable "instance_count" {
+  type    = number
+}

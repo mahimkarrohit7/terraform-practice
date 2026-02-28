@@ -13,16 +13,12 @@ output "private_subnet_id" {
 output "azs_used" {
   value = local.azs
 }
-
-
 output "debug_az_count" {
   value = var.az_count
 }
-
 output "debug_az_names" {
   value = data.aws_availability_zones.available.names
 }
-
 output "debug_local_azs" {
   value = local.azs
 }
